@@ -1,0 +1,15 @@
+<h1>Welcome to the home page!</h1>
+
+<h2>Here is a list of all of the posted projects:</h2>
+
+{% for project in projects.all %}
+<h3><a href='projects/{{project.pk}}'>{{project.title}}</a></h3>
+{{project.summary}}
+<br />
+<br />
+
+{% endfor %}
+<br />
+<br />
+
+<a href='{% url 'addProject' %}'>Add a Project</a>

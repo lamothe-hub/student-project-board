@@ -1,0 +1,16 @@
+<h1>Add a Project</h1>
+
+<form action=" {% url 'projectAdded' %}">
+Title:
+<input type="text" name="title"><br>
+Description:
+<input type="text" name="body"><br>
+Skills:
+<input type="text" name="skills"><br>
+University:
+<input type="text" name="university"><br>
+
+<input type="submit" value="Submit"><br>
+</form>
+<br><br>
+<a href='{% url 'home' %}'>Return to the homepage</a>
