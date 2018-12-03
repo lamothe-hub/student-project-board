@@ -1,0 +1,86 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='{% url 'home' %}'>Project Board</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNav">
+            <ul class="nav navbar-nav">
+                <li><a href='{% url 'addProject' %}'><font color="white">Post Project</font></a></li>
+                <li><a href='{% url 'profile' %}'>My Profile</a></li>
+                <li><a href='{% url 'login' %}'>Sign Out</a></li>
+            </ul>
+        </div>
+  </nav>
+
+<div class=container>
+<h1>Add a Project</h1>
+<form action=" {% url 'projectAdded' %}">
+Title:
+<input type="text" name="title"><br>
+Description:
+<input type="text" name="body"><br>
+
+<div class="row">
+      <div class="col-lg-12">
+    <div class="button-group">
+        Skills: <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> <span class="caret"></span></button>
+<ul class="dropdown-menu">
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="c" value="True"/>&nbsp;C</a></li>
+ <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox" name="cSharp" value="True"/>&nbsp;C#</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="cpp" value="True"/>&nbsp;C++</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="dataScience" value="True"/>&nbsp;Data Science</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="desktopApplication" value="True"/>&nbsp;Desktop Application</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="java" value="True"/>&nbsp;Java</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="javascript" value="True"/>&nbsp;Javascript</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="nodeJs" value="True"/>&nbsp;Node.js</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="php" value="True"/>&nbsp;PHP</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="python" value="True"/>&nbsp;Python</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="ruby" value="True"/>&nbsp;Ruby</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="sql" value="True"/>&nbsp;SQL</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="swift" value="True"/>&nbsp;Swift</a></li>
+ <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="webDevelopment" value="True"/>&nbsp;Web Development</a></li>
+
+
+</ul>
+ </div>
+</div>
+ </div>
+
+
+
+University:<br>
+<input type="radio" name="university" value="UF">UF<br>
+<input type="radio" name="university" value="UCF">UCF<br>
+<input type="radio" name="university" value="FSU">FSU<br>
+
+
+
+<input type="submit" value="Submit"><br>
+</form>
+<br><br>
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>

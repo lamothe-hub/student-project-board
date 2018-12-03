@@ -1,0 +1,237 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <title>Project Board</title>
+  </head>
+  <body>
+
+      {% include 'projects/nav.html' %}
+
+
+      <div class="container">
+
+
+          <div class="page-header">
+              <h1 align="center" style="font-size: 100px;">Project Board</h1>
+          </div>
+
+          {% if userAuthenticated %}
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4">
+
+                    <div style="padding-left: 40%">
+                        University
+                        <form action=" {% url 'filterProjects' %}">
+                        {% if university == "UF" %}
+                        <input type="radio" name="university" value="UF" checked='checked'>UF<br>
+                        {% else %}
+                        <input type="radio" name="university" value="UF">UF<br>
+                        {% endif %}
+
+                        {% if university == "UCF" %}
+                        <input type="radio" name="university" value="UCF" checked="checked">UCF<br>
+                        {% else %}
+                        <input type="radio" name="university" value="UCF">UCF<br>
+                        {% endif %}
+
+                        {% if university == "FSU" %}
+                        <input type="radio" name="university" value="FSU" checked="checked">FSU<br>
+                        {% else %}
+                        <input type="radio" name="university" value="FSU">FSU<br>
+                        {% endif %}
+                    </div>
+
+
+
+                  </div>
+                  <div class="col-sm-4">
+                      <div style="padding-left: 40%">
+
+                          <div class="row">
+                                <div class="col-lg-12">
+                              <div class="button-group">
+                                  Skills: <br><button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-plus"></span> <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="c" value="True"/>&nbsp;C</a></li>
+                           <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox" name="cSharp" value="True"/>&nbsp;C#</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="cpp" value="True"/>&nbsp;C++</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="dataScience" value="True"/>&nbsp;Data Science</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="desktopApplication" value="True"/>&nbsp;Desktop Application</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="java" value="True"/>&nbsp;Java</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="javascript" value="True"/>&nbsp;Javascript</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="nodeJs" value="True"/>&nbsp;Node.js</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="php" value="True"/>&nbsp;PHP</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="python" value="True"/>&nbsp;Python</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="ruby" value="True"/>&nbsp;Ruby</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="sql" value="True"/>&nbsp;SQL</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="swift" value="True"/>&nbsp;Swift</a></li>
+                           <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox" name="webDevelopment" value="True"/>&nbsp;Web Development</a></li>
+
+
+                          </ul>
+                           </div>
+                          </div>
+                           </div>
+
+                          <!--
+                          {% if skills == "Java" %}
+                          <input type="radio" name="skills" value="Java" checked="checked">Java<br>
+                          {% else %}
+                          <input type="radio" name="skills" value="Java">Java<br>
+                          {% endif %}
+
+                          {% if skills == "C++" %}
+                          <input type="radio" name="skills" value="C++" checked="checked">C++<br>
+                          {% else %}
+                          <input type="radio" name="skills" value="C++">C++<br>
+                          {% endif %}
+
+                          {% if skills == "Python" %}
+                          <input type="radio" name="skills" value="Python" checked="checked">Python<br>
+                          {% else %}
+                          <input type="radio" name="skills" value="Python">Python<br>
+                          {% endif %}
+                      -->
+                      </div>
+
+
+
+
+
+                  </div>
+                  <div class="col-sm-4">
+                      <div style="padding-left: 40%">
+                          Time Since Posting<br>
+
+                          {% if timeSincePosting == "week" %}
+                          <input type="radio" name="timeSincePosting" value="week" checked="checked">One Week<br>
+                          {% else %}
+                          <input type="radio" name="timeSincePosting" value="week">One Week<br>
+                          {% endif %}
+
+                          {% if timeSincePosting == "month" %}
+                          <input type="radio" name="timeSincePosting" value="month" checked="checked">One Month<br>
+                          {% else %}
+                          <input type="radio" name="timeSincePosting" value="month">One Month<br>
+                          {% endif %}
+
+                          {% if timeSincePosting == "allTime" %}
+                          <input type="radio" name="timeSincePosting" value="allTime" checked="checked">All Time<br>
+                          {% else %}
+                          <input type="radio" name="timeSincePosting" value="allTime">All Time<br>
+                          {% endif %}
+                      </div>
+                   </div>
+                </div>
+                <div class="row" align="center" style="padding-top: 30px">
+                    <input type="submit" class="btn btn-primary" value="Apply Filters">
+                    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Clear Filters</a>
+                    </form>
+                </div>
+              </div>
+
+
+
+              {% for project in projects.all %}
+              <div class="row">
+
+              <div class="col-sm-3">
+                  <div>
+                     <h3><a href='../projects/{{project.pk}}'>{{project.title}}</a></h3>
+                  </div>
+
+              </div>
+              <div class="col-sm-3">
+                  <div>
+                      {{project.body}}
+                  </div>
+
+              </div>
+              <div class="col-sm-3">
+                  <div>
+                      {{project.parseSkills}}
+                  </div>
+
+              </div>
+              <div class="col-sm-3">
+                  <div>
+                      {{project.printDate}}
+                  </div>
+
+              </div>
+          </div>
+
+              <br><br><br><br><br>
+              {% endfor %}
+<br><br><br><br>
+
+
+
+{% for project in projects %}
+
+
+
+<div class="row">
+
+<div class="col-sm-3">
+    <div>
+       <h3><a href='../projects/{{project.pk}}'>{{project.title}}</a></h3>
+    </div>
+
+</div>
+<div class="col-sm-3">
+    <div>
+        {{project.body}}
+    </div>
+
+</div>
+<div class="col-sm-3">
+    <div>
+        {{project.printableSkillsString}}
+    </div>
+
+</div>
+<div class="col-sm-3">
+    <div>
+        {{project.pub_date}}
+    </div>
+
+</div>
+</div>
+
+<br><br><br><br><br>
+{% empty %}
+<div align="center">No Projects meet your criteria...</div>
+{% endfor %}
+              <br />
+              <br />
+
+          {% endif %}
+          {% if not userAuthenticated %}
+            <div align='center'>Please log in</div>
+          {% endif %}
+
+
+
+      </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
